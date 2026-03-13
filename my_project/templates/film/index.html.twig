@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Films - {{ parent() }}{% endblock %}
+
+{% block body %}
+
+    <h1>Liste des films</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Année de sortie</th>
+                <th>Affiche</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for film in films %}
+            <tr>
+                <td>{{ film.id }}</td>
+                <td>{{ film.titre }}</td>
+                <td>{{ film.description }}</td>
+                <td>{{ film.annee_sortie }}</td>
+                <td> <img src="{{ film.affiche }}" alt=""></td>
+                {# <td>
+                    <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
+                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
+                </td> #}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# <a href="{{ path('app_article_new') }}">Create new</a> #}
+
+{% endblock %}

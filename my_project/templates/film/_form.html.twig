@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+{{ form_row(form.titre, {'label':'Titre de votre film'}) }}
+{{ form_row(form.description, {'label':'Description'}) }}
+{{ form_row(form.annee_sortie, {'label':'Année de sortie'}) }}
+{{ form_row(form.affiche, {'attr':{'rows':10}, 'label':'Affiche'}) }}
+{{ form_row(form.genre, {'label':'Genre'}) }}
+
+<button class="btn btn-primary">{{ button_label|default('Ajouter') }}</button>
+{{ form_end(form) }}

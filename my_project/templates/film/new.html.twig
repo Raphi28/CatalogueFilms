@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Film{% endblock %}
+
+{% block body %}
+    <div class="container my-5 py-5 w-50 mx-50 mx-auto">
+        <h1>Ajouter un nouveau film</h1>
+
+        {{ include('film/_form.html.twig') }}
+    </div>
+{% endblock %}
